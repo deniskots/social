@@ -1,7 +1,7 @@
 import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import {SignIn} from "./pages/SignIn";
-import {Home} from "./pages/Home";
+import {Index} from "./pages/Home";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
         <div className="App">
             <Routes>
                 <Route path="/signIn" element={<SignIn/>}/>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Index/>}/>
             </Routes>
         </div>
     );

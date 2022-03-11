@@ -4,7 +4,7 @@ import CommentIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
-import {useHomeStyles} from "../pages/Home";
+import {useHomeStyles} from "../pages/Home/theme";
 
 interface TweetProps {
     text: string;
@@ -16,7 +16,7 @@ interface TweetProps {
     };
 }
 
-export const Tweet: React.FC<TweetProps> = ({text, classes, user}:TweetProps):React.ReactElement => {
+export const Post: React.FC<TweetProps> = ({text, classes, user}:TweetProps):React.ReactElement => {
     return (
         <Paper className={classes.headerCentralWrapper} variant="outlined">
             <Grid container spacing={3}>
@@ -55,7 +55,6 @@ export const Tweet: React.FC<TweetProps> = ({text, classes, user}:TweetProps):Re
                             <IconButton>
                                 <SaveAltIcon style={{fontSize: 16}} />
                             </IconButton>
-
                         </div>
                     </div>
                 </Grid>
