@@ -7,8 +7,8 @@ import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import {useHomeStyles} from "../pages/Home/theme";
 
 interface TweetProps {
-    text: string;
     classes: ReturnType<typeof useHomeStyles>;
+    text: string;
     user: {
         fullname: string;
         username: string;
@@ -29,11 +29,7 @@ export const Post: React.FC<TweetProps> = ({text, classes, user}:TweetProps):Rea
                     <Typography>
                         <b>{user.fullname}</b> <span className={classes.userNameNewsFeed}>@{user.username}</span>
                     </Typography>
-                    <Typography variant="body2">
-                        Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная
-                        на каком-либо материальном носителе человеческая мысль;
-                        в общем плане связная и полная последовательность символов.
-                    </Typography>
+                    <Typography variant="body2">{text}</Typography>
                     <div className={classes.footerCentralWrapper}>
                         <div>
                             <IconButton>

@@ -30,11 +30,11 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
 
     return (
         <ul className={classes.sideBarList}>
-            <li className={classes.sideBarListItem}>
-                <IconButton aria-label="delete" color="primary">
-                    <ArrowBackIosIcon/>
-                </IconButton>
-            </li>
+            {/*<li className={classes.sideBarListItem}>*/}
+            {/*    <IconButton aria-label="delete" color="primary">*/}
+            {/*        <ArrowBackIosIcon/>*/}
+            {/*    </IconButton>*/}
+            {/*</li>*/}
             <li className={classes.sideBarListItem}>
                 <div>
                     <SearchIcon/>
@@ -90,11 +90,10 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
                         <CreateIcon/>
                     </Hidden>
                 </Button>
-                <ModalBlock onClose={onCloseAddPost} visible={visibleAddPost} title="">
+                <ModalBlock onClose={onCloseAddPost} visible={visibleAddPost}>
                     <div style={{width: 500}}>
                         <AddPostForm maxRows={10} classes={classes}/>
                     </div>
-
                 </ModalBlock>
             </li>
         </ul>

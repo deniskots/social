@@ -10,7 +10,7 @@ export const useStylesSignIn = makeStyles( (theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#73d8e8',
+        backgroundColor: '#A9F16C',
         height: '100vh',
     },
     loginBlock: {

@@ -5,6 +5,7 @@ import grey from "@material-ui/core/colors/grey";
 export const useHomeStyles = makeStyles((theme) => ({
     wrapper: {
         Height: "100vh",
+        backgroundColor: "#A9F16C",
     },
     sideBarList: {
         listStyle: "none",
@@ -92,7 +93,7 @@ export const useHomeStyles = makeStyles((theme) => ({
         outline: "none",
         fontFamily: "inherit",
         resize: "none",
-        marginLeft: 10,
+        marginLeft: 20,
     },
     addFormBottomLine: {
         height: 12,
