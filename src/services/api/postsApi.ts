@@ -4,6 +4,6 @@ import axios from "axios";
 
 export  const PostsApi = {
     fetchPosts(): Promise<PostsState ['items']> {
-        return axios.get('https://trycode.pw/c/IMH46.json').then(({ data }) => data);
+        return axios.get('/posts').then(({ data }) => data);
     }
 }

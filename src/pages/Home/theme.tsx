@@ -41,6 +41,10 @@ export const useHomeStyles = makeStyles((theme) => ({
         fontSize: 18,
         marginLeft: 8,
     },
+    postWrapper: {
+        color: "inherit",
+        textDecoration: "none"
+    },
     centralWrapper: {
         height: '100%',
         borderBottom: 0,
@@ -123,6 +127,45 @@ export const useHomeStyles = makeStyles((theme) => ({
     rightSide: {
         position: 'sticky',
         top: 0,
+    },
+    rightSideBlockHeader: {
+        borderTop: 0,
+        borderLeft: 0,
+        borderRight: 0,
+        backgroundColor: 'transparent',
+        padding: '13px 18px',
+        '& b': {
+            fontSize: 20,
+            fontWeight: 800,
+        },
+    },
+    rightSideBlock: {
+        backgroundColor: '#F5F8FA',
+        borderRadius: 10,
+        marginTop: 20,
+        '& .MuiList-root': {
+            paddingTop: 0,
+        },
+    },
+    rightSideBlockItem: {
+
+        cursor: 'pointer',
+        '& .MuiTypography-body1': {
+            fontWeight: 700,
+        },
+        '& .MuiListItemAvatar-root': {
+            minWidth: 50,
+        },
+        '& .MuiListItemText-root': {
+            margin: 0,
+        },
+        '&:hover': {
+            backgroundColor: '#edf3f6',
+        },
+        '& a': {
+            color: 'inherit',
+            textDecoration: 'none',
+        },
     },
 
 }));

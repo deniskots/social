@@ -1,16 +1,18 @@
 import React from "react";
 import {Button, Hidden, IconButton, Typography} from "@material-ui/core";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import EmailIcon from "@material-ui/icons/Email";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import ChatIcon from "@material-ui/icons/Chat";
 import CreateIcon from '@material-ui/icons/Create';
+import AndroidIcon from '@material-ui/icons/Android';
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import {useHomeStyles} from "../pages/Home/theme";
 import {ModalBlock} from "./ModalBlock";
 import {AddPostForm} from "./AddPostForm";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface SideMenuProps {
     classes: ReturnType<typeof useHomeStyles>;
@@ -30,11 +32,15 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
 
     return (
         <ul className={classes.sideBarList}>
-            {/*<li className={classes.sideBarListItem}>*/}
-            {/*    <IconButton aria-label="delete" color="primary">*/}
-            {/*        <ArrowBackIosIcon/>*/}
-            {/*    </IconButton>*/}
-            {/*</li>*/}
+                <li className={classes.sideBarListItem}>
+                    <Link to={'home'}>
+                        <div>
+                            <Hidden smDown>
+                                <Typography className={classes.sideBarListItemLabel}>NETWORK</Typography>
+                            </Hidden>
+                        </div>
+                    </Link>
+                </li>
             <li className={classes.sideBarListItem}>
                 <div>
                     <SearchIcon/>
