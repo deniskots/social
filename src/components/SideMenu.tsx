@@ -33,7 +33,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
     return (
         <ul className={classes.sideBarList}>
                 <li className={classes.sideBarListItem}>
-                    <Link to={'home'}>
+                    <Link to="/home">
                         <div>
                             <Hidden smDown>
                                 <Typography className={classes.sideBarListItemLabel}>NETWORK</Typography>

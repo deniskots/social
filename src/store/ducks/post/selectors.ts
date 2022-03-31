@@ -1,14 +1,17 @@
 import {createSelector} from "reselect";
 import {RootState} from "../../store";
-import {TagsState, LoadingState} from "./contracts/state";
+import {PostState, LoadingState} from "./contracts/state";
 
-export const selectTags = (state: RootState): TagsState => state.tags
+export const selectPost = (state: RootState): PostState => state.post;
 
-export const selectTagsItems = createSelector(selectTags, (posts) => posts.items)
+export const selectPostItems = createSelector(selectPost, (posts) => posts.data);
 
-export const selectLoadingState = (state: RootState): LoadingState => selectTags(state).loadingState;
+export const selectLoadingState = (state: RootState): LoadingState => selectPost(state).loadingState;
 
-export const selectIsTagsLoading = (state: RootState): boolean => selectLoadingState(state) === LoadingState.LOADING;
+export const selectIsPostLoading = (state: RootState): boolean => selectLoadingState(state) === LoadingState.LOADING;
 
-export const selectIsTagsLoaded = (state: RootState): boolean => selectLoadingState(state) === LoadingState.LOADED;
+export const selectIsPostLoaded = (state: RootState): boolean => selectLoadingState(state) === LoadingState.LOADED;
+
+
+export const selectPostData = (state: RootState): PostState['data'] => selectPost(state).data;
 

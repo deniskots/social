@@ -2,7 +2,7 @@ import React from "react";
 import {List, ListItem, ListItemText, Paper, Typography} from "@material-ui/core";
 import {useHomeStyles} from "../pages/Home/theme";
 import {useSelector} from "react-redux";
-import {selectIsTagsLoaded, selectTagsItems} from "../store/tags/selectors";
+import {selectIsTagsLoaded, selectTagsItems} from "../store/ducks/tags/selectors";
 import { Link } from "react-router-dom";
 
 
@@ -30,7 +30,7 @@ export const Tags: React.FC<TagsProps> = ({classes}: TagsProps): React.ReactElem
                 { items.map((obj) =>
                         <React.Fragment key={obj._id}>
                                 <ListItem className={classes.rightSideBlockItem}>
-                                    <Link to={`home/search?q=${obj.name}`}>
+                                    <Link to={`/home/search?q=${obj.name}`}>
                                     <ListItemText primary={obj.name}
                                                   secondary={
                                                       <Typography component="span" variant="body2" color="textSecondary">

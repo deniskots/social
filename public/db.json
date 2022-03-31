@@ -1,6 +1,7 @@
 {
   "posts": [
     {
+      "id": 3,
       "_id": "622f0ae8bfab5006a7cbcb32",
       "text": "Lorem aute laborum nisi labore ea tempor incididunt cupidatat qui Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et.",
       "user": {
@@ -10,91 +11,52 @@
       }
     },
     {
+      "id": 1,
       "_id": "622f0ae80a8a0a5f15620d24",
       "text": "Sit consequat fugiat ipsum incididunt irure voluptate aute Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et.",
       "user": {
-        "name": "Benita Bartlett",
+        "fullname": "Benita Bartlett",
         "username": "Simone",
         "avatarUrl": "https://picsum.photos/200"
       }
     },
     {
+      "id": 2,
       "_id": "622f0ae8f8af52d1982065a9",
       "text": "Cillum nostrud aute aute nisi ea Lorem sunt aute.",
       "user": {
-        "name": "Forbes Perkins",
+        "fullname": "Forbes Perkins",
         "username": "Gill",
         "avatarUrl": "https://picsum.photos/300"
       }
     },
     {
-      "_id": "622f0ae8c79657c45f15f966",
-      "text": "Occaecat mollit laboris aliqua id cillum minim non ad aliquip enim elit ad. Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et.",
+      "_id": ".cqd2u4hfo06",
+      "text": "thats all bitch!",
       "user": {
-        "name": "Ethel Thomas",
-        "username": "Betsy",
+        "fullname": "Jessy Pimpknan",
+        "username": "Bitch",
         "avatarUrl": "https://picsum.photos/400"
-      }
-    },
-    {
-      "_id": "622f0ae845d3fcb7b17feadb",
-      "text": "Et nisi do anim laborum.",
-      "user": {
-        "name": "Ortega Foreman",
-        "username": "Marcie",
-        "avatarUrl": "https://picsum.photos/100/100"
-      }
-    },
-    {
-      "_id": "622f0ae8a24f5cf69c86ea05",
-      "text": "Et adipisicing anim consequat dolor Lorem amet ullamco proident mollit do.",
-      "user": {
-        "name": "Christensen Velez",
-        "username": "Olivia",
-        "avatarUrl": "https://picsum.photos/500"
-      }
-    },
-    {
-      "_id": "622f0ae89d2a25f2190036da",
-      "text": "Commodo consectetur non anim anim aute eiusmod nostrud laboris.",
-      "user": {
-        "name": "Joyce Craig",
-        "username": "Melton",
-        "avatarUrl": "https://picsum.photos/600"
-      }
-    },
-    {
-      "_id": "622f0ae82d07b520ee08eddd",
-      "text": "Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et excepteur pariatur do.",
-      "user": {
-        "name": "Eloise Cotton",
-        "username": "Etta",
-        "avatarUrl": "https://picsum.photos/100/100"
-      }
-    },
-    {
-      "_id": "622f0ae84eed3b2cb8dc6298",
-      "text": "Irure quis adipisicing esse elit est dolor culpa enim ea nostrud deserunt dolor sit.",
-      "user": {
-        "name": "Lula Mcintyre",
-        "username": "Floyd",
-        "avatarUrl": "https://picsum.photos/700"
-      }
-    },
-    {
-      "_id": "622f0ae8c7a097b950c99761",
-      "text": "Ex dolor consequat pariatur reprehenderit fugiat pariatur sit cillum.Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et.",
-      "user": {
-        "name": "Cummings Oconnor",
-        "username": "Rosalie",
-        "avatarUrl": "https://picsum.photos/800"
-      }
+      },
+      "id": 4
     }
   ],
   "themes": [
-    {"_id": "68976f7a98f60f079978ff", "name": "спорт", "count": 123123},
-    {"_id": "68976f7a984f0f079978ff", "name": "политика", "count": 453764},
-    {"_id": "68976f7a98f03f079978ff", "name": "исскуство", "count": 758678}
+    {
+      "_id": "68976f7a98f60f079978ff",
+      "name": "спорт",
+      "count": 123123
+    },
+    {
+      "_id": "68976f7a984f0f079978ff",
+      "name": "политика",
+      "count": 453764
+    },
+    {
+      "_id": "68976f7a98f03f079978ff",
+      "name": "исскуство",
+      "count": 758678
+    }
   ],
   "tags": [
     {
@@ -118,7 +80,6 @@
       "count": 812812
     }
   ],
-
   "user": [
     {
       "_id": "68976f7a98f0f079978ff",

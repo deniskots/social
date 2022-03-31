@@ -1,43 +1,36 @@
-import {LoadingState, TagsState} from "./contracts/state";
-import {Action} from "redux";
+import {LoadingState, PostState} from "./contracts/state";
 
-export enum TagsActionsType {
-    SET_TAGS = 'tags/SET_TAGS',
-    FETCH_TAGS = 'tags/FETCH_TAGS',
-    SET_LOADING_STATE = 'tags/SET_LOADING_STATE',
+import { Post } from "../posts/contracts/state";
+import {
+    FetchPostDataActionInterface,
+    SetPostDataActionInterface,
+    setPostLoadingStateInterface
+} from "./contracts/actionTypes";
+
+export enum PostActionsType {
+    SET_POST_DATA = 'post/SET_POST_DATA',
+    FETCH_POST_DATA = 'post/FETCH_POST_DATA',
+    SET_LOADING_STATE = 'post/SET_LOADING_STATE',
 };
 
-export interface SetTagsActionInterface extends Action<TagsActionsType> {
-    type: TagsActionsType.SET_TAGS;
-    payload: TagsState["items"];
-};
 
-export const setTags = (payload: TagsState["items"]): SetTagsActionInterface => ({
-    type: TagsActionsType.SET_TAGS,
+export const setPostData = (payload: PostState['data']): SetPostDataActionInterface => ({
+    type: PostActionsType.SET_POST_DATA,
+    payload
+});
+
+export const fetchPostData = (payload:string): FetchPostDataActionInterface=> ({
+    type: PostActionsType.FETCH_POST_DATA,
     payload
 });
 
 
-export interface FetchTagsActionInterface extends Action<TagsActionsType> {
-    type: TagsActionsType.FETCH_TAGS;
-};
-
-export const fetchTags = (): FetchTagsActionInterface=> ({
-    type: TagsActionsType.FETCH_TAGS,
-});
-
-
-export interface setTagsLoadingStateInterface extends Action<TagsActionsType> {
-    type: TagsActionsType.SET_LOADING_STATE;
-    payload: LoadingState;
-};
-
-export const setTagsLoadingState = (payload: LoadingState): setTagsLoadingStateInterface => ({
-    type: TagsActionsType.SET_LOADING_STATE,
+export const setPostLoadingState = (payload: LoadingState): setPostLoadingStateInterface => ({
+    type: PostActionsType.SET_LOADING_STATE,
     payload
 });
 
 
 
-export type TagsActions = SetTagsActionInterface | setTagsLoadingStateInterface | FetchTagsActionInterface;
+export type PostActions = SetPostDataActionInterface | setPostLoadingStateInterface | FetchPostDataActionInterface;
 

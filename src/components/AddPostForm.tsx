@@ -2,9 +2,10 @@ import React from "react";
 import {Avatar, Button, IconButton, TextareaAutosize} from "@material-ui/core";
 import {ImageOutlined} from "@material-ui/icons";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
-import {useStylesSignIn} from "../pages/SignIn";
 import {useHomeStyles} from "../pages/Home/theme";
 import classNames from "classnames";
+import {useDispatch} from "react-redux";
+import {fetchAddPost} from "../store/ducks/posts/actionCreators";
 
 interface AddPostFormProps {
     classes: ReturnType<typeof useHomeStyles>;
@@ -12,16 +13,16 @@ interface AddPostFormProps {
 }
 
 export const AddPostForm: React.FC<AddPostFormProps> = ({classes, maxRows}:AddPostFormProps): React.ReactElement => {
+    const dispatch = useDispatch();
     const [text, setText] = React.useState<string>('');
-
     const handleChangeTextarea = (e: React.FormEvent<HTMLTextAreaElement>) => {
         if (e.currentTarget) {
             setText(e.currentTarget.value)
         }
     };
-
     const handleClickAddPost = (): void => {
         setText('')
+        dispatch(fetchAddPost(text))
     };
 
 

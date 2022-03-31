@@ -41,6 +41,21 @@ export const useHomeStyles = makeStyles((theme) => ({
         fontSize: 18,
         marginLeft: 8,
     },
+    post: {
+        display: 'flex',
+        cursor: 'pointer',
+        alignItems: 'flex-start',
+        paddingTop: 15,
+        paddingLeft: 20,
+        '&:hover': {
+            backgroundColor: 'rgb(245, 248, 250)',
+        }
+    },
+    postAvatar: {
+        width: theme.spacing(6.5),
+        height: theme.spacing(6.5),
+        marginRight: 15,
+    },
     postWrapper: {
         color: "inherit",
         textDecoration: "none"

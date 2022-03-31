@@ -1,17 +1,26 @@
 import React from "react";
-import {Container, Grid, Paper, Typography} from "@material-ui/core";
+import {Route} from "react-router-dom";
+
+import {Container, Grid, IconButton, Paper, Typography} from "@material-ui/core";
 import LinearProgress from '@material-ui/core/LinearProgress';
+
+
 import {Post} from "../../components/Post";
 import {SideMenu} from "../../components/SideMenu";
 import {AddPostForm} from "../../components/AddPostForm";
+import {Tags} from "../../components/Tags";
+import {SearchTextField} from "../../components/SearchTextField";
+
 import {useHomeStyles} from "./theme";
+
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPosts} from "../../store/ducks/posts/actionCreators";
-import {fetchTags} from "../../store/tags/actionCreators";
+import {fetchTags} from "../../store/ducks/tags/actionCreators";
 import {selectIsPostsLoading, selectPostsItems} from "../../store/ducks/posts/selectors";
-import {Routes, Route, Outlet} from "react-router-dom";
-import {SearchTextField} from "../../components/SearchTextField";
-import {Tags} from "../../components/Tags";
+import {BackBtn} from "../../components/BackBtn";
+import {FullPost} from "./components/FullPost";
+
+
 
 
 export function Index() {
@@ -24,6 +33,7 @@ export function Index() {
     React.useEffect(() => {
         dispatch(fetchPosts());
         dispatch(fetchTags());
+
     }, [dispatch]);
 
     return (
@@ -35,34 +45,41 @@ export function Index() {
                 <Grid item xs={6}>
                     <Paper className={classes.centralWrapper} variant={"outlined"}>
                         <Paper className={classes.headerCentralWrapper} variant="outlined">
-                            <Typography variant="h5">
-                                Главная
-                            </Typography>
-                        </Paper>
-                        <Paper>
-                            <div className={classes.addForm}>
-                                <AddPostForm classes={classes}/>
-                            </div>
-                            <div className={classes.addFormBottomLine}/>
-                        </Paper>
-                                {isLoading ? (<LinearProgress/>) : (posts.map(post =>
-                                    <Post {...post} classes={classes} key={post._id}/>
-                                ))}
+                            <Route path="/home/:any">
+                                <BackBtn/>
+                            </Route>
+                            <Route path={['/home', '/home/search']} exact>
+                                <Typography variant="h5">
+                                    Публикации
+                                </Typography>
+                            </Route>
+                            <Route path="/home/post">
+                                <Typography variant="h5">
+                                    Опубликовать
+                                </Typography>
+                            </Route>
 
-                        {/*<Routes>*/}
-                        {/*    <Route path="home">*/}
-                        {/*        {isLoading ? (<LinearProgress/>) : (posts.map(post =>*/}
-                        {/*            <Post {...post} classes={classes} key={post._id}/>*/}
-                        {/*        ))}*/}
-                        {/*    </Route>*/}
-                        {/*</Routes>*/}
-                        {/*<Outlet/>*/}
+                        </Paper>
+                        <Route path={['/home', '/home/search']} exact>
+                            <Paper>
+                                <div className={classes.addForm}>
+                                    <AddPostForm classes={classes}/>
+                                </div>
+                                <div className={classes.addFormBottomLine}/>
+                            </Paper>
+                        </Route>
+                        <Route path="/home" exact >
+                            {isLoading ? (<LinearProgress/>) : (posts.map(post =>
+                                <Post {...post} classes={classes} key={post._id}/>
+                            ))}
+                        </Route>
+                        <Route path="/home/post/:id" component={FullPost} exact/>
                     </Paper>
                 </Grid>
                 <Grid item xs={3}>
                     <div className={classes.rightSide}>
                         <SearchTextField fullWidth label="Поиск в сети"/>
-                        <Tags classes={classes}/>
+                                <Tags classes={classes}/>
                     </div>
                 </Grid>
             </Grid>
