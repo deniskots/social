@@ -1,11 +1,11 @@
 import React from "react";
 import {Route} from "react-router-dom";
 
-import {Container, Grid, IconButton, Paper, Typography} from "@material-ui/core";
+import {Container, Grid, Paper, Typography} from "@material-ui/core";
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 
-import {Post} from "../../components/Post";
+
 import {SideMenu} from "../../components/SideMenu";
 import {AddPostForm} from "../../components/AddPostForm";
 import {Tags} from "../../components/Tags";
@@ -19,6 +19,7 @@ import {fetchTags} from "../../store/ducks/tags/actionCreators";
 import {selectIsPostsLoading, selectPostsItems} from "../../store/ducks/posts/selectors";
 import {BackBtn} from "../../components/BackBtn";
 import {FullPost} from "./components/FullPost";
+import {Post} from "../../components/Post";
 
 
 

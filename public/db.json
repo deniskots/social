@@ -5,7 +5,7 @@
       "_id": "622f0ae8bfab5006a7cbcb32",
       "text": "Lorem aute laborum nisi labore ea tempor incididunt cupidatat qui Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et Non voluptate fugiat reprehenderit culpa eu officia pariatur amet sint qui et.",
       "user": {
-        "name": "Roseann Munoz",
+        "fullname": "Roseann Munoz",
         "username": "Carmela",
         "avatarUrl": "https://picsum.photos/100"
       }
@@ -41,14 +41,34 @@
       "id": 4
     },
     {
-      "_id": ".pcb5fiimb8",
-      "text": "hello",
+      "_id": ".tqhty5mvy1b",
+      "text": "as",
       "user": {
         "fullname": "Jessy Pimpknan",
         "username": "Bitch",
         "avatarUrl": "https://picsum.photos/400"
       },
       "id": 5
+    },
+    {
+      "_id": ".1cfn2pv229y",
+      "text": "parampampam",
+      "user": {
+        "fullname": "Jessy Pimpknan",
+        "username": "Bitch",
+        "avatarUrl": "https://picsum.photos/400"
+      },
+      "id": 6
+    },
+    {
+      "_id": ".xker8uppxij",
+      "text": "jk",
+      "user": {
+        "fullname": "Jessy Pimpknan",
+        "username": "Bitch",
+        "avatarUrl": "https://picsum.photos/400"
+      },
+      "id": 7
     }
   ],
   "themes": [

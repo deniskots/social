@@ -5,7 +5,7 @@ import grey from "@material-ui/core/colors/grey";
 export const useHomeStyles = makeStyles((theme) => ({
     wrapper: {
         Height: "100vh",
-        backgroundColor: "#A9F16C",
+        backgroundColor: "#d2d2d2",
     },
     sideBarList: {
         listStyle: "none",
@@ -51,10 +51,32 @@ export const useHomeStyles = makeStyles((theme) => ({
             backgroundColor: 'rgb(245, 248, 250)',
         }
     },
+    postHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+
+    },
+    postContent: {
+        flex: 1
+    },
+
+    fullPost: {
+        padding: 23,
+    },
+    fullPostText: {
+        fontSize: 20,
+        marginTop: 10,
+        wordBreak: "break-word",
+    },
     postAvatar: {
         width: theme.spacing(6.5),
         height: theme.spacing(6.5),
         marginRight: 15,
+    },
+    postsHeaderUser: {
+        display: "flex",
+        alignItems: "center",
     },
     postWrapper: {
         color: "inherit",
@@ -128,11 +150,11 @@ export const useHomeStyles = makeStyles((theme) => ({
         },
     },
     addFormButton: {
-        color: 'rgb(6,60,72)',
+        color: 'rgb(2,2,2)',
         cursor: 'pointer',
         transition: 'background-color 0.1s ease-in-out',
         '&:hover': {
-            backgroundColor: 'rgb(159,144,144,0.1)',
+            backgroundColor: 'rgba(229,71,71,0.1)',
         },
     },
     addFormBottomRight: {

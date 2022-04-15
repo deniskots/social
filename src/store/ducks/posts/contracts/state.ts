@@ -3,6 +3,12 @@ export enum LoadingState {
     LOADING = 'LOADING',
     ERROR = 'ERROR',
     NEVER = 'NEVER'
+};
+
+export enum AddFormState {
+    LOADING = 'LOADING',
+    ERROR = 'ERROR',
+    NEVER = 'NEVER'
 }
 
 export interface Post {
@@ -18,6 +24,7 @@ export interface Post {
 export interface PostsState {
     items: Post[];
     loadingState: LoadingState;
+    addFormState: AddFormState;
 }
 
 

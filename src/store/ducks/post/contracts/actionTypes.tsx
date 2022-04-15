@@ -1,6 +1,5 @@
 import {LoadingState, PostState} from "./state";
 import {Action} from "redux";
-import { Post } from "../../posts/contracts/state";
 
 export enum PostActionsType {
     SET_POST_DATA = 'post/SET_POST_DATA',

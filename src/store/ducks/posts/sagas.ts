@@ -1,7 +1,8 @@
 import {call, put, takeLatest} from 'redux-saga/effects'
-import {addPost, FetchAddPostActionInterface, PostsActionsType, setPosts, setPostsLoadingState} from "./actionCreators";
+import {addPost, setAddFormState, setPosts, setPostsLoadingState} from "./actionCreators";
 import {PostsApi} from "../../../services/api/postsApi";
-import {LoadingState, Post} from './contracts/state';
+import {AddFormState, LoadingState} from './contracts/state';
+import {FetchAddPostActionInterface, PostsActionsType} from './contracts/ActionTypes';
 
 export function* fetchPostsRequest(): Generator<any, any, any> {
     try {
@@ -12,25 +13,17 @@ export function* fetchPostsRequest(): Generator<any, any, any> {
     }
 };
 
-export function* fetchAddPostRequest({payload}:FetchAddPostActionInterface): Generator<any, any, any> {
+export function* fetchAddPostRequest({payload: text}: FetchAddPostActionInterface): Generator<any, any, any> {
     try {
-        const data: Post = {
-            _id: Math.random().toString(36).substr(1),
-            text: payload,
-            user: {
-                fullname: "Jessy Pimpknan",
-                username: "Bitch",
-                avatarUrl: "https://picsum.photos/400"
-            },
-        };
-        const item = yield call(PostsApi.addPost, data);
+        const item = yield call(PostsApi.addPost,text);
         yield put(addPost(item));
     } catch (error) {
-        yield put(setPostsLoadingState(LoadingState.ERROR))
+        yield put(setAddFormState(AddFormState.ERROR))
     }
 }
 
 export function* postsSaga() {
     yield takeLatest(PostsActionsType.FETCH_POSTS, fetchPostsRequest);
     yield takeLatest(PostsActionsType.FETCH_ADD_POST, fetchAddPostRequest);
+
 }

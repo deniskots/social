@@ -1,10 +1,12 @@
 import produce, {Draft} from 'immer';
-import {LoadingState, PostsState} from "./contracts/state";
-import {PostsActions, PostsActionsType} from "./actionCreators";
+import {AddFormState, LoadingState, PostsState} from "./contracts/state";
+import {PostsActionsType} from "./contracts/ActionTypes";
+import {PostsActions} from "./actionCreators";
 
 const initialPostsState: PostsState = {
     items: [],
-    loadingState: LoadingState.NEVER
+    addFormState: AddFormState.NEVER,
+    loadingState: LoadingState.NEVER,
 };
 
 export const postsReducer = produce((draft: Draft<PostsState>, action: PostsActions) => {
@@ -17,8 +19,15 @@ export const postsReducer = produce((draft: Draft<PostsState>, action: PostsActi
             draft.items = [];
             draft.loadingState = LoadingState.LOADING;
             break;
+        case PostsActionsType.FETCH_ADD_POST:
+            draft.addFormState = AddFormState.LOADING;
+            break;
         case PostsActionsType.ADD_POST:
-            draft.items.push(action.payload);
+            draft.items.splice(0, 0, action.payload);
+            draft.addFormState = AddFormState.NEVER;
+            break;
+        case PostsActionsType.SET_ADD_FORM_STATE:
+            draft.addFormState = action.payload;
             break;
         case PostsActionsType.SET_LOADING_STATE:
             draft.loadingState = action.payload;
